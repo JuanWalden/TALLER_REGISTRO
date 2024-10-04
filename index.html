@@ -14,7 +14,7 @@
 </head>
 <body>
     <h1>Registro de Emociones</h1>
-    <label for="day">Día:</label>
+    <label for="day">DÃ­a:</label>
     <input type="date" id="day">
     
     <label for="time">Hora:</label>
@@ -26,12 +26,12 @@
     <label for="emotions">Emociones:</label>
     <textarea id="emotions" rows="2"></textarea>
 
-    <label for="intensity">Intensidad de la Emoción (1-10):</label>
+    <label for="intensity">Intensidad de la EmociÃ³n (1-10):</label>
     <input type="number" id="intensity" min="1" max="10">
 
-    <label for="emotionCategory">Categoría de la Emoción:</label>
+    <label for="emotionCategory">CategorÃ­a de la EmociÃ³n:</label>
     <select id="emotionCategory">
-        <option value="Alegría">Alegría</option>
+        <option value="AlegrÃ­a">AlegrÃ­a</option>
         <option value="Tristeza">Tristeza</option>
         <option value="Ira">Ira</option>
         <option value="Miedo">Miedo</option>
@@ -39,12 +39,12 @@
         <option value="Asco">Asco</option>
     </select>
 
-    <label for="strategy">Estrategia de Regulación Emocional:</label>
+    <label for="strategy">Estrategia de RegulaciÃ³n Emocional:</label>
     <select id="strategy">
-        <option value="Reevaluación">Reevaluación</option>
-        <option value="Aceptación">Aceptación</option>
-        <option value="Evitación">Evitación</option>
-        <option value="Expresión">Expresión</option>
+        <option value="ReevaluaciÃ³n">ReevaluaciÃ³n</option>
+        <option value="AceptaciÃ³n">AceptaciÃ³n</option>
+        <option value="EvitaciÃ³n">EvitaciÃ³n</option>
+        <option value="ExpresiÃ³n">ExpresiÃ³n</option>
     </select>
 
     <label for="response">Mi Respuesta:</label>
@@ -100,13 +100,13 @@
                 const entryDiv = document.createElement('div');
                 entryDiv.className = 'entry';
                 entryDiv.innerHTML = `
-                    <p><strong>Día:</strong> ${entry.day}</p>
+                    <p><strong>DÃ­a:</strong> ${entry.day}</p>
                     <p><strong>Hora:</strong> ${entry.time}</p>
                     <p><strong>Desencadenante:</strong> ${entry.trigger}</p>
                     <p><strong>Emociones:</strong> ${entry.emotions}</p>
                     <p><strong>Intensidad:</strong> ${entry.intensity}</p>
-                    <p><strong>Categoría de la Emoción:</strong> ${entry.emotionCategory}</p>
-                    <p><strong>Estrategia de Regulación Emocional:</strong> ${entry.strategy}</p>
+                    <p><strong>CategorÃ­a de la EmociÃ³n:</strong> ${entry.emotionCategory}</p>
+                    <p><strong>Estrategia de RegulaciÃ³n Emocional:</strong> ${entry.strategy}</p>
                     <p><strong>Mi Respuesta:</strong> ${entry.response}</p>
                     <button onclick="deleteEntry(${index})">Eliminar</button>
                 `;
@@ -128,7 +128,7 @@
                 return;
             }
 
-            let csvContent = "data:text/csv;charset=utf-8,Día,Hora,Desencadenante,Emociones,Intensidad,Categoría de la Emoción,Estrategia de Regulación,Mi Respuesta\n";
+            let csvContent = "data:text/csv;charset=utf-8,DÃ­a,Hora,Desencadenante,Emociones,Intensidad,CategorÃ­a de la EmociÃ³n,Estrategia de RegulaciÃ³n,Mi Respuesta\n";
             entries.forEach(entry => {
                 const row = `${entry.day},${entry.time},${entry.trigger},${entry.emotions},${entry.intensity},${entry.emotionCategory},${entry.strategy},${entry.response}`;
                 csvContent += row + "\n";
@@ -143,7 +143,7 @@
             document.body.removeChild(link);
         }
 
-        // Mostrar las entradas al cargar la página
+        // Mostrar las entradas al cargar la pÃ¡gina
         window.onload = displayEntries;
     </script>
 </body>
